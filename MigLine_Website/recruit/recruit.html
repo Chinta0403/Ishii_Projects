@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>採用情報 | 有限会社Mig Line（ミグライン）仲間募集中！</title>
+    <meta name="description" content="有限会社Mig Lineでは倉庫内作業・配送スタッフを大募集！未経験大歓迎、日給保証、手厚いサポートあり。埼玉県戸田市の温かい職場です。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --orange: #E8720C;
+            --orange-light: #F4A043;
+            --orange-pale: #FFF3E8;
+            --brown: #6B3A1F;
+            --brown-light: #A05A2C;
+            --cream: #FDF6EC;
+            --text-dark: #2D1B0E;
+            --text-mid: #5C3D1E;
+            --text-light: #8B6B4A;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 246, 236, 0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--orange-light);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .back-link {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--orange);
+        }
+
+        /* HERO */
+        .recruit-hero {
+            background: linear-gradient(135deg, var(--orange) 0%, #c75d08 50%, var(--brown) 100%);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recruit-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .recruit-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--orange);
+            font-weight: 900;
+            font-size: 0.9rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .recruit-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .recruit-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.92);
+            max-width: 560px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--white);
+            color: var(--orange);
+            font-weight: 900;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 4.5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 0.4rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 900;
+            color: var(--brown);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .section-lead {
+            font-size: 1rem;
+            color: var(--text-mid);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        /* MESSAGE */
+        .message-section {
+            background: var(--white);
+        }
+
+        .message-box {
+            background: var(--orange-pale);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border-left: 5px solid var(--orange);
+        }
+
+        .message-box p {
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+        }
+
+        .message-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* POINTS */
+        .points-section {
+            background: var(--orange-pale);
+        }
+
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .point-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(107, 58, 31, 0.08);
+            position: relative;
+        }
+
+        .point-num {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--orange);
+            color: var(--white);
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(232, 114, 12, 0.35);
+        }
+
+        .point-card h3 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--brown);
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .point-card h3 em {
+            font-style: normal;
+            color: var(--orange);
+            font-size: 1.5rem;
+        }
+
+        .point-card p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+
+        .point-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* JOB TABLE */
+        .job-section {
+            background: var(--white);
+        }
+
+        .job-table-wrap {
+            border: 2px solid var(--orange-light);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .job-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .job-table th,
+        .job-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(107, 58, 31, 0.1);
+            text-align: left;
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .job-table th {
+            width: 28%;
+            color: var(--brown);
+            font-weight: 700;
+            background: var(--orange-pale);
+            white-space: nowrap;
+        }
+
+        .job-table td {
+            color: var(--text-mid);
+        }
+
+        .job-table tr:last-child th,
+        .job-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        /* VOICE */
+        .voice-section {
+            background: var(--orange-pale);
+        }
+
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .voice-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 16px rgba(107, 58, 31, 0.07);
+        }
+
+        .voice-card p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .voice-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .voice-meta img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .voice-name {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--brown);
+        }
+
+        .voice-role {
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+
+        /* FORM */
+        .form-section {
+            background: var(--white);
+        }
+
+        .form-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--orange-pale);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border-top: 6px solid var(--orange);
+        }
+
+        .form-wrap h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--brown);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-note {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-tel {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 0.4rem;
+        }
+
+        .required {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            font-size: 0.7rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(107, 58, 31, 0.2);
+            border-radius: 10px;
+            background: var(--white);
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--orange);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .radio-group input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--orange);
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background: var(--orange);
+            color: var(--white);
+            font-weight: 900;
+            font-size: 1.1rem;
+            padding: 1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            margin-top: 1rem;
+            box-shadow: 0 4px 16px rgba(232, 114, 12, 0.35);
+        }
+
+        .btn-submit:hover {
+            background: var(--brown-light);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo span {
+            color: var(--orange-light);
+        }
+
+        footer p {
+            font-size: 0.82rem;
+            margin-bottom: 0.4rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--orange-light);
+        }
+
+        footer .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.35);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.25rem;
+        }
+
+        @media (max-width: 640px) {
+            .job-table th {
+                width: 35%;
+                font-size: 0.85rem;
+            }
+
+            .job-table td {
+                font-size: 0.85rem;
+            }
+
+            .form-wrap {
+                padding: 1.75rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="../index.html"><span>Mig</span> Line</a>
+        <a class="back-link" href="../index.html">← 企業HPへ戻る</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="recruit-hero">
+        <div class="recruit-hero-inner">
+            <span class="hero-badge">未経験大歓迎！学歴・年齢不問！</span>
+            <h1>面倒見の良さだけは、<br />どこにも負けません。</h1>
+            <p>有限会社Mig Line 採用特設ページ<br />正社員・アルバイト、同時募集中！</p>
+            <a href="#apply" class="hero-cta">今すぐ応募する！</a>
+        </div>
+    </section>
+
+    <!-- MESSAGE -->
+    <section class="message-section">
+        <div class="container">
+            <div class="section-label">MESSAGE</div>
+            <h2 class="section-title">ウチの会社のこと、<br />少し話させてください。</h2>
+            <div class="message-box">
+                <p>仕事を探すとき、「人間関係」って一番気になりませんか？</p>
+                <p>ウチの会社（ミグライン）には、カッコつける先輩はいません。みんな昔は初心者で、失敗しながら仕事を覚えてきました。だから、新しく入った人が戸惑う気持ち、痛いほど分かります。</p>
+                <p>道具の名前が分からなくても、重いものがうまく持てなくても、怒る人はいません。「最初はできなくて当たり前だろ！」って笑って手伝ってくれる、そんなおせっかいな先輩ばかりです。</p>
+                <p>不器用でもいい。履歴書が真っ白でも気にしません。「これから頑張りたい」というその気持ちだけ持って、飛び込んできてください。</p>
+                <p style="font-weight:700; color: var(--brown); margin-top: 1rem;">代表取締役　小島 洋平</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- POINTS -->
+    <section class="points-section">
+        <div class="container">
+            <div class="section-label">GOOD POINTS</div>
+            <h2 class="section-title">Mig Lineで働く<br />3つの「いいね！」</h2>
+            <div class="points-grid">
+                <div class="point-card">
+                    <div class="point-num">1</div>
+                    <div class="point-icon">💰</div>
+                    <h3>早く終わっても<br /><em>日給保証！</em></h3>
+                    <p>基本は8:00〜17:00ですが、作業がスムーズに進んで昼過ぎに終わることも。そんな日でも、しっかり1日分のお給料をお支払いします。テキパキ仕事して、効率よく稼いでいきましょう！</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-num">2</div>
+                    <div class="point-icon">✈️</div>
+                    <h3>全国出張あり！<br /><em>旅行気分も味わえる！</em></h3>
+                    <p>現場によっては日本全国へ出張も。経費はもちろん会社持ち！仕事終わりにご当地グルメを楽しんだり、観光スポットを巡ったり。出張が楽しみになる職場です。</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-num">3</div>
+                    <div class="point-icon">🎓</div>
+                    <h3>ゼロから育てる<br /><em>手厚いサポート！</em></h3>
+                    <p>未経験スタートが大半なので、指導の丁寧さには自信があります。フォークリフトなどの資格取得支援（費用会社負担）もあり、一生モノのスキルが身につきます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOB DETAILS -->
+    <section class="job-section" id="job">
+        <div class="container">
+            <div class="section-label">REQUIREMENTS</div>
+            <h2 class="section-title">募集要項</h2>
+            <p class="section-lead">まずはお茶でも飲みながら、ざっくばらんに話しましょう！</p>
+            <div class="job-table-wrap">
+                <table class="job-table">
+                    <tbody>
+                        <tr>
+                            <th>募集職種</th>
+                            <td>倉庫内作業スタッフ・組立設置スタッフ</td>
+                        </tr>
+                        <tr>
+                            <th>仕事内容</th>
+                            <td>
+                                ・倉庫内での仕分け・梱包・運搬<br />
+                                ・物流倉庫や大型店舗でのラック（大型棚）の組立・設置<br />
+                                ※チームで動くので、一人きりで放置されることはありません！
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>対象となる方</th>
+                            <td>
+                                <span class="highlight">未経験の方、大・大・大歓迎！</span><br />
+                                ・学歴、年齢、性別いっさい不問<br />
+                                ・出張に行ける方、旅行好きな方歓迎<br />
+                                ・フォークリフト等の資格がある方は優遇します
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>雇用形態</th>
+                            <td>正社員 / アルバイト（正社員登用制度あり）</td>
+                        </tr>
+                        <tr>
+                            <th>給与</th>
+                            <td>
+                                【アルバイト】<span class="highlight">日給 11,000円〜13,000円</span><br />
+                                【正社員】<span class="highlight">月給 300,000円〜</span><br />
+                                ※経験・頑張りに応じてしっかり評価します！
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>勤務時間</th>
+                            <td>
+                                8:00〜17:00<br />
+                                <span class="highlight">★その日の業務が終わり次第、即解散！（日給は保証）</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>待遇・福利厚生</th>
+                            <td>
+                                ・昇給あり<br />
+                                ・賞与 年3回（業績による）<br />
+                                ・社会保険完備（労災・雇用・健康・厚生年金）＋損害保険<br />
+                                ・各種手当（責任者・休日出勤・残業・家族・夜間）<br />
+                                ・資格取得支援制度（費用会社負担）<br />
+                                ・制服貸与、健康診断あり
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>勤務地・面接地</th>
+                            <td>
+                                【勤務地】関東エリアの現場が中心（全国出張あり）<br />
+                                【面接地】埼玉県戸田市氷川町2丁目7番1号（本社）
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOICE -->
+    <section class="voice-section">
+        <div class="container">
+            <div class="section-label">STAFF VOICE</div>
+            <h2 class="section-title">先輩スタッフの声</h2>
+            <div class="voice-grid">
+                <div class="voice-card">
+                    <p>「入社前は体力に自信がなくて不安だったけど、先輩が丁寧に教えてくれて気づいたら3年。チームの雰囲気が好きで、続けられています。」</p>
+                    <div class="voice-meta">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                            alt="田中さん" />
+                        <div>
+                            <div class="voice-name">田中 健一 さん（30代）</div>
+                            <div class="voice-role">倉庫スタッフ・入社3年目</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <p>「前の職場ではシフトが不安定だったけど、ここは日給保証があって安心。社長が話しやすくて、何かあればすぐ相談できます。」</p>
+                    <div class="voice-meta">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b73c?w=100&auto=format&fit=crop&q=80"
+                            alt="佐藤さん" />
+                        <div>
+                            <div class="voice-name">佐藤 みゆき さん（20代）</div>
+                            <div class="voice-role">仕分けスタッフ・入社2年目</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <p>「出張で全国いろんな場所に行けるのが意外と楽しくて！仕事終わりに地元のご飯食べたり、旅行みたいな感覚もあります。」</p>
+                    <div class="voice-meta">
+                        <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=100&auto=format&fit=crop&q=80"
+                            alt="鈴木さん" />
+                        <div>
+                            <div class="voice-name">鈴木 大地 さん（20代）</div>
+                            <div class="voice-role">組立スタッフ・入社1年目</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-section" id="apply">
+        <div class="container">
+            <div class="form-wrap">
+                <h3>📮 簡単応募フォーム</h3>
+                <p class="form-note">堅苦しい志望動機は不要です。まずはお気軽にご連絡ください！</p>
+                <p class="form-tel">📞 お電話でも OK！048-XXX-XXXX</p>
+                <form onsubmit="event.preventDefault(); alert('ご応募ありがとうございます！\nまずはざっくばらんにお話ししましょう！');">
+                    <div class="form-group">
+                        <label>お名前<span class="required">必須</span></label>
+                        <input type="text" required placeholder="戸田 太郎" />
+                    </div>
+                    <div class="form-group">
+                        <label>電話番号<span class="required">必須</span></label>
+                        <input type="tel" required placeholder="090-XXXX-XXXX" />
+                    </div>
+                    <div class="form-group">
+                        <label>メールアドレス</label>
+                        <input type="email" placeholder="example@mail.com" />
+                    </div>
+                    <div class="form-group">
+                        <label>希望の働き方<span class="required">必須</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="emp" value="正社員" checked /> 正社員希望</label>
+                            <label><input type="radio" name="emp" value="アルバイト" /> アルバイト希望</label>
+                            <label><input type="radio" name="emp" value="どちらでも" /> どちらでもOK</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>何か聞きたいことがあればどうぞ（任意）</label>
+                        <textarea rows="4" placeholder="例：未経験ですが大丈夫ですか？ / いつから働けますか？"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">この内容で応募する！ →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo"><span>Mig</span> Line 採用特設ページ</div>
+        <p>有限会社 Mig Line（ミグライン）</p>
+        <p>〒335-0027 埼玉県戸田市氷川町2丁目7番1号</p>
+        <p><a href="../index.html">← 企業ホームページへ戻る</a></p>
+        <p class="copyright">© 2024 Mig Line Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

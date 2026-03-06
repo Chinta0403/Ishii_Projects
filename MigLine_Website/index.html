@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>有限会社Mig Line | 埼玉県戸田市の物流・倉庫業務</title>
+    <meta name="description" content="有限会社Mig Lineは埼玉県戸田市を拠点とした物流・倉庫内作業請負・配送・労働者派遣の会社です。人を大切に、地域とともに歩んできた会社です。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --orange: #E8720C;
+            --orange-light: #F4A043;
+            --orange-pale: #FFF3E8;
+            --brown: #6B3A1F;
+            --brown-light: #A05A2C;
+            --cream: #FDF6EC;
+            --text-dark: #2D1B0E;
+            --text-mid: #5C3D1E;
+            --text-light: #8B6B4A;
+            --white: #FFFFFF;
+            --gray-light: #F5F0EB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(253, 246, 236, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--orange-light);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-mid);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        .nav-recruit {
+            background: var(--orange);
+            color: var(--white) !important;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            transition: background 0.2s !important;
+        }
+
+        .nav-recruit:hover {
+            background: var(--brown-light) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--brown);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.45);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(107, 58, 31, 0.7) 0%, rgba(232, 114, 12, 0.4) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 7rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--orange-light);
+        }
+
+        .hero-lead {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(232, 114, 12, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--orange-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 114, 12, 0.5);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: white;
+        }
+
+        /* ========== COMMON SECTION ========== */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 900;
+            color: var(--brown);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .section-lead {
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            max-width: 640px;
+            margin-bottom: 3rem;
+        }
+
+        /* ========== MESSAGE ========== */
+        .message-section {
+            background: var(--orange-pale);
+        }
+
+        .message-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .message-img {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(107, 58, 31, 0.2);
+        }
+
+        .message-img img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .message-text blockquote {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--brown);
+            border-left: 4px solid var(--orange);
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .message-text p {
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+        }
+
+        .message-sig {
+            margin-top: 1.5rem;
+            font-weight: 700;
+            color: var(--brown);
+        }
+
+        /* ========== SERVICES ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(107, 58, 31, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--orange-light);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(232, 114, 12, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ========== ABOUT NUMBERS ========== */
+        .about-section {
+            background: var(--brown);
+        }
+
+        .about-section .section-title {
+            color: var(--white);
+        }
+
+        .about-section .section-label {
+            color: var(--orange-light);
+        }
+
+        .about-section .section-lead {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .number-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .number-card .num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--orange-light);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .number-card .num span {
+            font-size: 1.4rem;
+        }
+
+        .number-card .num-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ========== GALLERY ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        .gallery-grid .big {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .gallery-grid .big img {
+            height: 460px;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* ========== VOICE ========== */
+        .voice-section {
+            background: var(--orange-pale);
+        }
+
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .voice-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(107, 58, 31, 0.08);
+            position: relative;
+        }
+
+        .voice-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--orange-light);
+            line-height: 1;
+            font-family: serif;
+            opacity: 0.4;
+        }
+
+        .voice-card p {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+        }
+
+        .voice-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .voice-author-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .voice-author-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--brown);
+        }
+
+        .voice-author-role {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* ========== COMPANY INFO ========== */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(107, 58, 31, 0.12);
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .info-table th {
+            width: 30%;
+            color: var(--brown);
+            font-weight: 700;
+            background: var(--orange-pale);
+        }
+
+        .info-table td {
+            color: var(--text-mid);
+        }
+
+        /* ========== RECRUIT CTA ========== */
+        .recruit-cta {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--brown-light) 100%);
+            text-align: center;
+        }
+
+        .recruit-cta h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .recruit-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-white {
+            display: inline-block;
+            background: var(--white);
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-logo span {
+            color: var(--orange-light);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .copyright {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .message-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .message-img img {
+                height: 250px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid .big {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .gallery-grid .big img {
+                height: 220px;
+            }
+
+            .gallery-item img {
+                height: 160px;
+            }
+
+            .info-table th {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid .big {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#"><span>Mig</span> Line</a>
+        <nav id="main-nav">
+            <a href="#services">事業内容</a>
+            <a href="#about">会社概要</a>
+            <a href="#voice">スタッフの声</a>
+            <a href="recruit/index.html" class="nav-recruit">採用情報</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">埼玉県戸田市の物流・倉庫請負</span>
+            <h1>
+                人と荷物を、<em>丁寧に。</em><br />
+                地域に根ざした<br />物流のプロ集団。
+            </h1>
+            <p class="hero-lead">
+                有限会社Mig Lineは、埼玉県戸田市を拠点に、倉庫内作業請負・配送・労働者派遣を手がけています。
+                スタッフ一人ひとりを大切にする、泥臭くも温かい会社です。
+            </p>
+            <div class="hero-actions">
+                <a href="#services" class="btn-primary">事業内容を見る</a>
+                <a href="recruit/index.html" class="btn-secondary">🙋 仲間募集中</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MESSAGE -->
+    <section class="message-section">
+        <div class="container">
+            <div class="message-inner">
+                <div class="message-img">
+                    <img src="https://images.unsplash.com/photo-1604762524889-3e2fcc145683?w=800&auto=format&fit=crop&q=80"
+                        alt="代表者の写真" loading="lazy" />
+                </div>
+                <div class="message-text">
+                    <div class="section-label">MESSAGE</div>
+                    <h2 class="section-title">仕事の先には、<br />必ず「人」がいる。</h2>
+                    <blockquote>
+                        「荷物を運ぶのは仕事だけど、<br />その先にある笑顔のために動いてる」
+                    </blockquote>
+                    <p>
+                        Mig Lineは、数字やコストだけを追う会社ではありません。
+                        挨拶をしっかりする、仲間を助ける、嘘をつかない。
+                        そんな当たり前の「人情」を、何よりも大切にしてきました。
+                    </p>
+                    <p>
+                        不器用でもいい。スマートじゃなくていい。
+                        現場が大変なときは一緒に汗をかく。
+                        そんな泥臭い温かさを、ずっと続けていきたいと思っています。
+                    </p>
+                    <p class="message-sig">有限会社 Mig Line　代表取締役　小島 洋平</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <div class="section-label">SERVICES</div>
+            <h2 class="section-title">私たちの仕事</h2>
+            <p class="section-lead">
+                物流の現場で培った経験と、チームの力で、お客様の「困った」に応えます。
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>倉庫内作業請負</h3>
+                    <p>ピッキング・仕分け・梱包・棚入れなど、倉庫内の多様な業務をチームで請け負います。スピードと正確さを両立した作業が強みです。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>配送業務</h3>
+                    <p>ルート配送から単発の輸送まで対応。荷物を丁寧に扱い、時間通りにお届けすることを最優先に業務しています。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>労働者派遣</h3>
+                    <p>倉庫・物流の現場に即戦力となる人材を派遣します。スキルや現場環境に合わせたマッチングで、即日稼働も可能です。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>流通加工・仕分け</h3>
+                    <p>商品のラベリング、セット組み、仕分けなど、付加価値のある流通加工にも対応。EC・小売業様からのご依頼も多数。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="about-section" id="about-numbers">
+        <div class="container">
+            <div class="section-label">OUR NUMBERS</div>
+            <h2 class="section-title">数字で見るMig Line</h2>
+            <p class="section-lead">長年の現場経験と実績が、私たちの自信の根拠です。</p>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="num">20<span>年</span></div>
+                    <div class="num-label">業界での経験年数</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">30<span>社+</span></div>
+                    <div class="num-label">取引先企業数</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">98<span>%</span></div>
+                    <div class="num-label">配送・納品の時間遵守率</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">5<span>年</span></div>
+                    <div class="num-label">スタッフ平均在籍年数</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+        <div class="container">
+            <div class="section-label">OUR WORK</div>
+            <h2 class="section-title">現場の様子</h2>
+            <p class="section-lead">毎日たくさんの荷物と向き合いながら、チームで元気よく仕事しています。</p>
+            <div class="gallery-grid">
+                <div class="gallery-item big">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=900&auto=format&fit=crop&q=80"
+                        alt="倉庫作業の様子" loading="lazy" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&auto=format&fit=crop&q=80"
+                        alt="配送の様子" loading="lazy" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&auto=format&fit=crop&q=80"
+                        alt="チームで作業" loading="lazy" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&auto=format&fit=crop&q=80"
+                        alt="仕分け作業" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOICE -->
+    <section class="voice-section" id="voice">
+        <div class="container">
+            <div class="section-label">STAFF VOICE</div>
+            <h2 class="section-title">スタッフの声</h2>
+            <p class="section-lead">ここで働くリアルな声を聞いてください。</p>
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <p>「最初は体力的に不安があったけど、先輩が優しく教えてくれて気づいたら3年。チームの雰囲気がとにかく好きです。」</p>
+                    <div class="voice-author">
+                        <img class="voice-author-img"
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                            alt="スタッフ写真" />
+                        <div>
+                            <div class="voice-author-name">田中 健一 さん</div>
+                            <div class="voice-author-role">倉庫スタッフ・入社3年目</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <p>「前の職場ではシフトが不安定だったけど、ここは安定してる。社長が話しやすいし、何かあればすぐ相談できます。」</p>
+                    <div class="voice-author">
+                        <img class="voice-author-img"
+                            src="https://images.unsplash.com/photo-1494790108755-2616b612b73c?w=100&auto=format&fit=crop&q=80"
+                            alt="スタッフ写真" />
+                        <div>
+                            <div class="voice-author-name">佐藤 みゆき さん</div>
+                            <div class="voice-author-role">仕分けスタッフ・入社5年目</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <p>「未経験で入って、今では後輩を教える立場に。ここでの経験が自分の自信になりました。物流の面白さを知れてよかった。」</p>
+                    <div class="voice-author">
+                        <img class="voice-author-img"
+                            src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=100&auto=format&fit=crop&q=80"
+                            alt="スタッフ写真" />
+                        <div>
+                            <div class="voice-author-name">鈴木 大地 さん</div>
+                            <div class="voice-author-role">フォークリフトオペレーター・入社7年目</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPANY INFO -->
+    <section id="about">
+        <div class="container">
+            <div class="section-label">COMPANY</div>
+            <h2 class="section-title">会社概要</h2>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <th>会社名</th>
+                        <td>有限会社 Mig Line（ミグライン）</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>代表取締役　小島 洋平</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>2004年6月</td>
+                    </tr>
+                    <tr>
+                        <th>資本金</th>
+                        <td>5,000,000円</td>
+                    </tr>
+                    <tr>
+                        <th>従業員数</th>
+                        <td>40名</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒335-0027　埼玉県戸田市氷川町２丁目７番１号</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>物品の仕訳・組立・梱包・管理及び配送業務の請負業 / 倉庫内における荷物の運搬業 / 労働者派遣事業</td>
+                    </tr>
+                    <tr>
+                        <th>対応エリア</th>
+                        <td>関東エリア中心（埼玉・東京・神奈川・千葉）、全国対応可</td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>月曜〜土曜 8:00〜18:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- RECRUIT CTA -->
+    <section class="recruit-cta">
+        <div class="container">
+            <h2>一緒に働いてくれる仲間を、<br />大募集しています！</h2>
+            <p>未経験でも大丈夫。あなたのやる気を大切にします。</p>
+            <a href="recruit/index.html" class="btn-white">採用情報を見る →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo"><span>Mig</span> Line</div>
+        <p>有限会社 Mig Line</p>
+        <p>埼玉県戸田市 | TEL: 048-XXX-XXXX</p>
+        <p class="copyright">© 2024 Mig Line Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('main-nav');
+        hamburger.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '60px';
+            nav.style.right = '1.5rem';
+            nav.style.background = 'var(--cream)';
+            nav.style.padding = '1rem';
+            nav.style.borderRadius = '12px';
+            nav.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+            nav.style.border = '1px solid var(--orange-light)';
+        });
+    </script>
+</body>
+
+</html>

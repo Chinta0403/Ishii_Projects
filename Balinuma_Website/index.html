@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BALINUMA -バリヌマ- | 静岡県沼津市のスナック・バー</title>
+    <meta name="description" content="静岡県沼津市・とらやビル2FのスナックBALINUMA（バリヌマ）。新規様90分飲み放題3,000円。営業時間 21:00〜05:00 火曜定休。" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E8D5A3;
+            --gold-pale: rgba(201, 168, 76, .12);
+            --wine: #7B2D3E;
+            --navy: #0A0F1E;
+            --navy-mid: #111827;
+            --navy-soft: #1A2234;
+            --white: #FFFFFF;
+            --text-dim: rgba(255, 255, 255, .65);
+            --text-muted: rgba(255, 255, 255, .4);
+            --border: rgba(201, 168, 76, .25);
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        /* ====== HEADER ====== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .9rem 2rem;
+            background: rgba(10, 15, 30, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .site-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .site-logo small {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: .65rem;
+            font-weight: 300;
+            color: var(--text-dim);
+            letter-spacing: .2em;
+            margin-top: 1px;
+        }
+
+        .header-info {
+            font-size: .78rem;
+            color: var(--text-dim);
+            text-align: right;
+            line-height: 1.5;
+        }
+
+        .header-info span {
+            color: var(--gold);
+            font-weight: 700
+        }
+
+        nav.header-nav {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center
+        }
+
+        nav.header-nav a {
+            text-decoration: none;
+            font-size: .82rem;
+            color: var(--text-dim);
+            letter-spacing: .06em;
+            transition: color .2s;
+        }
+
+        nav.header-nav a:hover {
+            color: var(--gold)
+        }
+
+        /* ====== HERO ====== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1600&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(.3) saturate(.6);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at center, rgba(201, 168, 76, .08) 0%, transparent 65%),
+                linear-gradient(0deg, rgba(10, 15, 30, 1) 0%, rgba(10, 15, 30, .3) 50%, rgba(10, 15, 30, .7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem 4rem;
+            max-width: 760px
+        }
+
+        .hero-en {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            letter-spacing: .1em;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: .5rem;
+            text-shadow: 0 0 60px rgba(201, 168, 76, .4);
+        }
+
+        .hero-ja {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--gold-light);
+            letter-spacing: .5em;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-divider {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1.5rem auto;
+        }
+
+        .hero-sub {
+            font-size: clamp(.9rem, 2vw, 1.05rem);
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+            letter-spacing: .05em;
+        }
+
+        .hero-badge-wrap {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: .78rem;
+            padding: .35rem .9rem;
+            border-radius: 50px;
+            letter-spacing: .06em;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #C9A84C, #a07a28);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: .9rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            letter-spacing: .08em;
+            transition: all .3s;
+            box-shadow: 0 4px 30px rgba(201, 168, 76, .3);
+        }
+
+        .hero-cta:hover {
+            box-shadow: 0 8px 40px rgba(201, 168, 76, .5);
+            transform: translateY(-2px)
+        }
+
+        /* scroll indicator */
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            color: var(--text-muted);
+            font-size: .7rem;
+            letter-spacing: .2em;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(180deg, var(--gold), transparent);
+            animation: scrollPulse 2s infinite
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: .3
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        /* ====== COMMON ====== */
+        section {
+            padding: 5.5rem 2rem
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto
+        }
+
+        .sec-en {
+            font-family: 'Cinzel', serif;
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .25em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: .5rem;
+        }
+
+        .sec-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .sec-lead {
+            font-size: .95rem;
+            color: var(--text-dim);
+            max-width: 580px;
+            margin-bottom: 2.5rem
+        }
+
+        /* ====== CONCEPT ====== */
+        .concept-section {
+            background: var(--navy-mid)
+        }
+
+        .concept-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center
+        }
+
+        .concept-img {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 16px 60px rgba(0, 0, 0, .5)
+        }
+
+        .concept-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(.85) saturate(.8)
+        }
+
+        blockquote.concept-quote {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--gold-light);
+            border-left: 2px solid var(--gold);
+            padding-left: 1.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .concept-para {
+            font-size: .93rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem
+        }
+
+        /* ====== SYSTEM (料金) ====== */
+        .system-section {
+            background: var(--navy)
+        }
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem
+        }
+
+        .system-card {
+            background: var(--navy-soft);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2rem 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--wine), var(--gold));
+        }
+
+        .system-card-label {
+            font-family: 'Cinzel', serif;
+            font-size: .68rem;
+            letter-spacing: .2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: .75rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .system-card-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border)
+        }
+
+        .system-card h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: .5rem;
+            line-height: 1.4
+        }
+
+        .system-price {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: .25rem
+        }
+
+        .system-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-dim)
+        }
+
+        .system-note {
+            font-size: .82rem;
+            color: var(--text-dim);
+            margin-top: .75rem
+        }
+
+        .system-list {
+            list-style: none;
+            margin-top: 1rem
+        }
+
+        .system-list li {
+            font-size: .88rem;
+            color: var(--text-dim);
+            padding: .3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            justify-content: space-between
+        }
+
+        .system-list li:last-child {
+            border-bottom: none
+        }
+
+        .system-list li span {
+            color: var(--gold-light)
+        }
+
+        /* ====== MENU ====== */
+        .menu-section {
+            background: var(--navy-mid)
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem
+        }
+
+        .menu-col h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .55rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            font-size: .9rem
+        }
+
+        .menu-item-name {
+            color: var(--text-dim)
+        }
+
+        .menu-item-price {
+            color: var(--gold-light);
+            font-weight: 700;
+            white-space: nowrap;
+            margin-left: 1rem
+        }
+
+        /* ====== MAMA MESSAGE ====== */
+        .mama-section {
+            background: var(--navy)
+        }
+
+        .mama-inner {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .mama-photo {
+            text-align: center
+        }
+
+        .mama-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 40px rgba(201, 168, 76, .2);
+            margin-bottom: 1rem;
+        }
+
+        .mama-photo .mama-name {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: .25rem
+        }
+
+        .mama-photo .mama-role {
+            font-size: .78rem;
+            color: var(--text-muted);
+            letter-spacing: .1em
+        }
+
+        blockquote.mama-quote {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--gold-light);
+            border-left: 2px solid var(--wine);
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .mama-text p {
+            font-size: .93rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem
+        }
+
+        /* ====== GALLERY ====== */
+        .gallery-section {
+            background: var(--navy-mid);
+            padding-bottom: 4rem
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: .75rem;
+        }
+
+        .gallery-grid .gw {
+            grid-column: span 2
+        }
+
+        .gallery-item {
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, .1)
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            filter: saturate(.75) brightness(.8);
+            transition: all .5s
+        }
+
+        .gallery-grid .gw img {
+            height: 200px
+        }
+
+        .gallery-item:hover img {
+            filter: saturate(1) brightness(.95);
+            transform: scale(1.03)
+        }
+
+        /* ====== FAQ ====== */
+        .faq-section {
+            background: var(--navy)
+        }
+
+        .faq-list {
+            max-width: 720px
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0
+        }
+
+        .faq-q {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: .75rem;
+            display: flex;
+            gap: .75rem;
+            align-items: flex-start;
+        }
+
+        .faq-q::before {
+            content: 'Q';
+            display: inline-flex;
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--navy);
+            font-family: 'Cinzel', serif;
+            font-size: .85rem;
+            font-weight: 700;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-a {
+            font-size: .9rem;
+            color: var(--text-dim);
+            padding-left: 2.5rem;
+            line-height: 1.8
+        }
+
+        /* ====== ACCESS ====== */
+        .access-section {
+            background: var(--navy-soft)
+        }
+
+        .access-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start
+        }
+
+        .access-table {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        .access-table tr {
+            border-bottom: 1px solid var(--border)
+        }
+
+        .access-table th {
+            width: 7rem;
+            padding: .9rem .5rem;
+            text-align: left;
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: .06em;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .access-table td {
+            padding: .9rem .5rem .9rem 0;
+            font-size: .9rem;
+            color: var(--text-dim);
+            vertical-align: top
+        }
+
+        .map-wrap {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--navy-mid);
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-muted)
+        }
+
+        .map-placeholder p {
+            font-size: .85rem;
+            margin-top: .5rem
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 1rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: .82rem;
+            padding: .35rem 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all .2s;
+            letter-spacing: .06em;
+        }
+
+        .map-link:hover {
+            background: var(--gold);
+            color: var(--navy)
+        }
+
+        /* ====== CTA ====== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-mid), var(--wine) 80%);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.6rem, 3vw, 2.5rem);
+            color: var(--gold);
+            margin-bottom: 1rem;
+            letter-spacing: .08em
+        }
+
+        .cta-section p {
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+            font-size: 1rem
+        }
+
+        .cta-tel {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: .05em;
+            text-decoration: none;
+            display: block;
+            margin-bottom: .5rem
+        }
+
+        .cta-tel:hover {
+            color: var(--gold)
+        }
+
+        .cta-note {
+            font-size: .82rem;
+            color: var(--text-muted)
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: var(--navy);
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center
+        }
+
+        footer .f-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: .5rem;
+            letter-spacing: .1em
+        }
+
+        footer .f-sub {
+            font-size: .72rem;
+            color: var(--text-muted);
+            letter-spacing: .2em;
+            margin-bottom: 1.5rem
+        }
+
+        footer .f-info {
+            font-size: .8rem;
+            color: var(--text-muted);
+            margin-bottom: .3rem
+        }
+
+        footer .cr {
+            margin-top: 2rem;
+            font-size: .68rem;
+            color: rgba(255, 255, 255, .2);
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media(max-width:768px) {
+
+            .concept-inner,
+            .mama-inner,
+            .access-inner,
+            .menu-grid {
+                grid-template-columns: 1fr
+            }
+
+            .concept-img img {
+                height: 260px
+            }
+
+            .mama-photo img {
+                width: 160px;
+                height: 160px
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .gallery-grid .gw {
+                grid-column: span 2
+            }
+
+            header {
+                padding: .75rem 1rem
+            }
+
+            nav.header-nav {
+                display: none
+            }
+
+            .map-wrap {
+                min-height: 200px
+            }
+        }
+
+        @media(max-width:480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr
+            }
+
+            .gallery-grid .gw {
+                grid-column: span 1
+            }
+
+            .system-price {
+                font-size: 1.9rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a class="site-logo" href="#">BALINUMA<small>SNACK ＆ BAR — NUMAZU, SHIZUOKA</small></a>
+        <nav class="header-nav">
+            <a href="#system">料金システム</a>
+            <a href="#menu">ドリンク</a>
+            <a href="#mama">ママより</a>
+            <a href="#access">アクセス</a>
+        </nav>
+        <div class="header-info">
+            <div>OPEN <span>21:00〜05:00</span></div>
+            <div>火曜定休</div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-en">BALINUMA</div>
+            <div class="hero-ja">バ リ ヌ マ</div>
+            <div class="hero-divider"></div>
+            <p class="hero-sub">
+                静岡県沼津市・とらやビル2F<br />
+                大人の夜に、ゆったりとした時間を。
+            </p>
+            <div class="hero-badge-wrap">
+                <span class="hero-badge">🍹 新規様 90分飲み放題 3,000円</span>
+                <span class="hero-badge">🌙 OPEN 21:00〜05:00</span>
+                <span class="hero-badge">🔑 火曜定休</span>
+            </div>
+            <a href="#system" class="hero-cta">料金・システムを見る</a>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>SCROLL
+        </div>
+    </section>
+
+    <!-- CONCEPT -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="concept-inner">
+                <div class="concept-img">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&auto=format&fit=crop&q=80"
+                        alt="バーカウンターのイメージ" loading="lazy" />
+                </div>
+                <div>
+                    <div class="sec-en">CONCEPT</div>
+                    <h2 class="sec-title">日常から少しだけ、<br />抜け出せる場所。</h2>
+                    <blockquote class="concept-quote">
+                        「ただお酒を飲む場所じゃない。<br />話して、笑って、ほっとする場所。」
+                    </blockquote>
+                    <p class="concept-para">
+                        BALINUMA（バリヌマ）は、静岡県沼津市のとらやビル2Fにある、大人のためのスナック＆バーです。
+                    </p>
+                    <p class="concept-para">
+                        仕事終わりの一杯も、仲間と囲む二次会も、一人でしっとり飲みたい夜も——どんな気分であっても、ここに来れば決まってくつろいでいただける。そんな空間を大切にしています。
+                    </p>
+                    <p class="concept-para">
+                        初めてのスナックで緊張している方も、常連のように迎え入れます。お気軽にお立ち寄りください。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEM -->
+    <section class="system-section" id="system">
+        <div class="container">
+            <div class="sec-en">PRICE &amp; SYSTEM</div>
+            <h2 class="sec-title">料金システム</h2>
+            <p class="sec-lead">初めての方もわかりやすい、シンプルな料金体系です。</p>
+            <div class="system-grid">
+                <div class="system-card">
+                    <div class="system-card-label">NEW GUEST</div>
+                    <h3>新規様<br />飲み放題コース</h3>
+                    <div class="system-price">¥3,000<span>（税込）</span></div>
+                    <p class="system-note">初回ご来店の方向け。90分間の飲み放題付き。<br />はじめての方は、まずこのコースでリラックスしてください。</p>
+                </div>
+                <div class="system-card">
+                    <div class="system-card-label">REGULAR</div>
+                    <h3>通常料金<br />（常連・ご指名）</h3>
+                    <div class="system-price">応相談<span></span></div>
+                    <p class="system-note">ご指名料・セット料金については、来店時にお気軽にご確認ください。</p>
+                    <ul class="system-list">
+                        <li><span>チャージ料</span><span>あり（詳細は店舗まで）</span></li>
+                        <li><span>ボトルキープ</span><span>承ります</span></li>
+                        <li><span>ご指名料</span><span>あり</span></li>
+                    </ul>
+                </div>
+                <div class="system-card" style="grid-column:span 1">
+                    <div class="system-card-label">OPEN HOURS</div>
+                    <h3>営業時間・<br />定休日</h3>
+                    <ul class="system-list">
+                        <li><span>営業時間</span><span>21:00〜翌05:00</span></li>
+                        <li><span>定休日</span><span>毎週火曜日</span></li>
+                        <li><span>お問い合わせ</span><span>090-1993-7119</span></li>
+                        <li><span>場所</span><span>沼津市・とらやビル2F</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="sec-en">DRINK MENU</div>
+            <h2 class="sec-title">ドリンクメニュー（一例）</h2>
+            <p class="sec-lead">こだわりのラインナップで、お好みのお酒をご提供します。</p>
+            <div class="menu-grid">
+                <div class="menu-col">
+                    <h3>🥃 スピリッツ・ウイスキー</h3>
+                    <div class="menu-item"><span class="menu-item-name">山崎（ハイボール・ロック）</span><span
+                            class="menu-item-price">時価</span></div>
+                    <div class="menu-item"><span class="menu-item-name">角ハイボール</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">ジャックダニエル</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">芋焼酎 各種</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">麦焼酎 各種</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">泡盛</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                </div>
+                <div class="menu-col">
+                    <h3>🍷 その他ドリンク</h3>
+                    <div class="menu-item"><span class="menu-item-name">生ビール</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">梅酒（ロック・ソーダ割）</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">カシスオレンジ</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">ウーロン茶・ソフトドリンク</span><span
+                            class="menu-item-price">チャージ内</span></div>
+                    <div class="menu-item"><span class="menu-item-name">ボトルキープ 各種</span><span
+                            class="menu-item-price">要相談</span></div>
+                    <div class="menu-item"><span class="menu-item-name">フード・おつまみ</span><span
+                            class="menu-item-price">別途</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAMA MESSAGE -->
+    <section class="mama-section" id="mama">
+        <div class="container">
+            <div class="sec-en">FROM MAMA</div>
+            <h2 class="sec-title">ママからのメッセージ</h2>
+            <div class="mama-inner">
+                <div class="mama-photo">
+                    <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&auto=format&fit=crop&q=80"
+                        alt="ママの写真" loading="lazy" />
+                    <div class="mama-name">Mama Yuki</div>
+                    <div class="mama-role">BALINUMA オーナーママ</div>
+                </div>
+                <div class="mama-text">
+                    <blockquote class="mama-quote">
+                        「いらっしゃいませ」じゃなくて、<br />
+                        「おかえり」って言える場所でありたい。
+                    </blockquote>
+                    <p>BALINUMAのページをご覧いただき、ありがとうございます。</p>
+                    <p>私がこの店を始めたのは、「誰かの話を、ちゃんと聞きたい」という気持ちからでした。仕事の愚痴でも、嬉しかったことでも、何でもないことでも——ここではゆっくり、話してください。</p>
+                    <p>スナックって、初めての方には少し敷居が高く感じるかもしれません。でも、そんな心配はご無用。初来店のお客様には90分飲み放題でリラックスして楽しんでいただける入門コースをご用意しています。</p>
+                    <p>沼津の夜、ぜひBALINUMAで過ごしてみてください。お待ちしています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="sec-en">GALLERY</div>
+            <h2 class="sec-title">店内の雰囲気</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item gw">
+                    <img src="https://images.unsplash.com/photo-1538488881038-e252a119ace7?w=900&auto=format&fit=crop&q=80"
+                        alt="バーの店内" loading="lazy" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&auto=format&fit=crop&q=80"
+                        alt="カクテル" loading="lazy" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80"
+                        alt="ドリンク" loading="lazy" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1528823872057-9c018575b56d?w=600&auto=format&fit=crop&q=80"
+                        alt="ウイスキー" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="sec-en">FAQ</div>
+            <h2 class="sec-title">よくある質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">スナックははじめてなのですが、一人でも入れますか？</div>
+                    <div class="faq-a">
+                        もちろんです！お一人でいらっしゃるお客様も多いですよ。初来店の方には90分飲み放題コース（3,000円）があり、気軽に楽しんでいただけます。緊張しなくて大丈夫です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">飲み放題のドリンクには何が含まれますか？</div>
+                    <div class="faq-a">焼酎・ウイスキー（ハイボール）・ビール・梅酒・カシスオレンジ・ウーロン茶などの定番ドリンクが含まれます。詳細はご来店時にご確認ください。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">ボトルキープはできますか？</div>
+                    <div class="faq-a">はい、承っております。ウイスキー・焼酎など各種ボトルキープが可能です。詳細はお気軽にスタッフへお尋ねください。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">予約はできますか？</div>
+                    <div class="faq-a">お電話にてご予約を承っております。お電話番号：090-1993-7119。グループでのご来店も大歓迎です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">女性一人でも大丈夫ですか？</div>
+                    <div class="faq-a">はい、女性のお客様もお一人でいらっしゃいます。アットホームな雰囲気ですので、安心してご来店ください。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="access-section" id="access">
+        <div class="container">
+            <div class="sec-en">ACCESS</div>
+            <h2 class="sec-title">アクセス</h2>
+            <div class="access-inner">
+                <div>
+                    <table class="access-table">
+                        <tr>
+                            <th>店名</th>
+                            <td>BALINUMA（バリヌマ）</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>静岡県沼津市<br />とらやビル 2F</td>
+                        </tr>
+                        <tr>
+                            <th>電話</th>
+                            <td><a href="tel:090-1993-7119"
+                                    style="color:var(--gold);text-decoration:none">090-1993-7119</a></td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>21:00〜翌05:00</td>
+                        </tr>
+                        <tr>
+                            <th>定休日</th>
+                            <td>毎週 火曜日</td>
+                        </tr>
+                        <tr>
+                            <th>最寄り駅</th>
+                            <td>JR沼津駅 徒歩圏内</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="map-wrap">
+                    <div class="map-placeholder">
+                        <div style="font-size:2rem">📍</div>
+                        <p style="color:var(--text-dim);margin-top:.5rem">静岡県沼津市<br />とらやビル 2F</p>
+                        <a class="map-link" href="https://maps.google.com/?q=沼津市+とらやビル" target="_blank"
+                            rel="noopener">Google Mapで見る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>ご予約・お問い合わせ</h2>
+            <p>初めての方も、お気軽にお電話ください。<br />「話を聞いてみたい」だけでも大歓迎です。</p>
+            <a href="tel:090-1993-7119" class="cta-tel">090-1993-7119</a>
+            <p class="cta-note">OPEN 21:00〜翌05:00 ／ 毎週火曜定休</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="f-logo">BALINUMA</div>
+        <div class="f-sub">SNACK & BAR — NUMAZU, SHIZUOKA</div>
+        <p class="f-info">静岡県沼津市 とらやビル 2F</p>
+        <p class="f-info">TEL: 090-1993-7119 ／ OPEN 21:00〜05:00 ／ 火曜定休</p>
+        <p class="cr">© 2024 BALINUMA. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
